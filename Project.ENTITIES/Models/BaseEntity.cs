@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Project.ENTITIES.Models
 {
     public abstract class BaseEntity
-    {
+    {   
         public int ID { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime? DeletedDate { get; set; }

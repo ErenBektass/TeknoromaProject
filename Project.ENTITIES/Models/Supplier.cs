@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Project.ENTITIES.Models
 {
-    public class Category
+    public class Supplier:BaseEntity
     {
-        public string CategoryName { get; set; }
     }
 }

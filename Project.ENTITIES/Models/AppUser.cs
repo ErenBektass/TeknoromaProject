@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Project.ENTITIES.Models
 {
-    public class Category
-    {
-        public string CategoryName { get; set; }
-    }
+     public class AppUser:BaseEntity
+     {
+
+     } 
 }
