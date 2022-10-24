@@ -1,4 +1,5 @@
 ﻿using Project.DAL.Context;
+using Project.ENTITIES.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -10,6 +11,13 @@ namespace Project.DAL.StrategyPattern
 {
     public class MyInit: CreateDatabaseIfNotExists<MyContext>
     {
+        protected override void Seed(MyContext context)
+        {
+            AppUser admin = new AppUser
+            {
+                 
 
+            };
+        }
     }
 }

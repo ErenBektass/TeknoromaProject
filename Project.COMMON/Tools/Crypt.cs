@@ -9,14 +9,14 @@ namespace Project.COMMON.Tools
 {
     public static class Crypt
     {
-        static string key { get; set; } = "a?2_2/*/**-le21dn1jıondı1jd";
+        private static string Key { get; set; } = "a?2_2/*/**-le21dn1jıondı1jd";
         public static string Decrypt(string cipher)
         {
             
             byte[] data = UTF8Encoding.UTF8.GetBytes(cipher);
             using (MD5CryptoServiceProvider md5=new MD5CryptoServiceProvider())
             {
-                byte[] keys = md5.ComputeHash(UTF8Encoding.UTF8.GetBytes(key));
+                byte[] keys = md5.ComputeHash(UTF8Encoding.UTF8.GetBytes(Key));
                 using (TripleDESCryptoServiceProvider tripDes = new TripleDESCryptoServiceProvider()
                 {
                     Key = keys,
@@ -40,7 +40,7 @@ namespace Project.COMMON.Tools
 
             using (MD5CryptoServiceProvider md5= new MD5CryptoServiceProvider())
             {
-                byte [] keys = md5.ComputeHash(UTF8Encoding.UTF8.GetBytes(key));
+                byte [] keys = md5.ComputeHash(UTF8Encoding.UTF8.GetBytes(Key));
                 using (TripleDESCryptoServiceProvider tripleDES = new TripleDESCryptoServiceProvider()
                 {
                     Key=keys,
