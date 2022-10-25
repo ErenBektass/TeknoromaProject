@@ -14,14 +14,17 @@ namespace Project.ENTITIES.Models
             
             ActivationCode = Guid.NewGuid();
         }
-
+        public string UserName { get; set; }
+        public string Password { get; set; }
+        public string ConfirmPassword { get; set; }
         public string Email { get; set; }
-        public UserRole MyProperty { get; set; }
+        public UserRole Role { get; set; }
         public Guid ActivationCode { get; set; }
         public bool Active { get; set; }
 
+
         //Relational Properties
-        public virtual UserProfile Profile { get; set; }
-        public virtual Order Orders { get; set; }
-    } 
+        public virtual AppUserProfile Profile { get; set; }
+        public virtual List<Order> Orders { get; set; }
+     } 
 }

@@ -42,18 +42,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enums\DataStatus.cs" />
+    <Compile Include="Enums\ExpenseType.cs" />
     <Compile Include="Enums\Gender.cs" />
+    <Compile Include="Enums\IssueStatus.cs" />
+    <Compile Include="Enums\OrderStatus.cs" />
     <Compile Include="Enums\UserRole.cs" />
     <Compile Include="Models\AppUser.cs" />
     <Compile Include="Models\BaseEntity.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\Expense.cs" />
+    <Compile Include="Models\Issue.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\OrderDetail.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Shipper.cs" />
     <Compile Include="Models\Supplier.cs" />
-    <Compile Include="Models\UserProfile.cs" />
+    <Compile Include="Models\AppUserProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

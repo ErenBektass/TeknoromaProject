@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project.ENTITIES.Models
+namespace Project.ENTITIES.Enums
 {
-    public class UserProfile:BaseEntity
+    public  enum ExpenseType
     {
-
+        Invoice=1,TechnicalExpense=2,SalaryPayment=3,OtherExpense=4
     }
 }

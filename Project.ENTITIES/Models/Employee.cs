@@ -25,8 +25,8 @@ namespace Project.ENTITIES.Models
         public decimal MonthlySales { get; set; }
         public decimal Salary { get; set; }
 
-        //Relational Properties
 
+        //Relational Properties
         public virtual List<Order> Orders { get; set; }
 
 
