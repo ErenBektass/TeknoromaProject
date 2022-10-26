@@ -19,7 +19,8 @@ namespace Project.DAL.Context
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Configurations.Add(new AppUserMap());          
+            modelBuilder.Configurations.Add(new AppUserMap());
+            modelBuilder.Configurations.Add(new ProfileMap());
             modelBuilder.Configurations.Add(new CategoryMap());
             modelBuilder.Configurations.Add(new EmployeeMap());
             modelBuilder.Configurations.Add(new ExpenseMap());
@@ -30,10 +31,11 @@ namespace Project.DAL.Context
             modelBuilder.Configurations.Add(new SupplierMap());
             modelBuilder.Configurations.Add(new ProductMap());
 
+
         }
 
         public DbSet<AppUser> AppUsers {get;set;}
-        public DbSet<AppUserProfile> AppUserProfiles {get;set;}
+        public DbSet<AppUserProfile> Profiles {get;set;}
         public DbSet<Category> Categories { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Expense> Expenses { get; set; }
