@@ -31,7 +31,6 @@ namespace Project.DAL.Context
             modelBuilder.Configurations.Add(new SupplierMap());
             modelBuilder.Configurations.Add(new ProductMap());
 
-
         }
 
         public DbSet<AppUser> AppUsers {get;set;}
