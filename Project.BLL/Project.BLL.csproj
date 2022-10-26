@@ -51,13 +51,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DesignPatterns\GenericRepository\BaseRep\BaseRepository.cs" />
+    <Compile Include="DesignPatterns\GenericRepository\ConcRep\CategoryRepository.cs" />
+    <Compile Include="DesignPatterns\GenericRepository\IntRep\IRepository.cs" />
     <Compile Include="DesignPatterns\SingletonPattern\DBTool.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="DesignPatterns\Repositories\" />
-  </ItemGroup>
-  <ItemGroup>
+    <ProjectReference Include="..\Project.COMMON\Project.COMMON.csproj">
+      <Project>{11c63702-9e3f-4203-9e90-5e6b27831008}</Project>
+      <Name>Project.COMMON</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Project.DAL\Project.DAL.csproj">
       <Project>{12a13be2-0bdd-4465-9c1c-745cbdce191c}</Project>
       <Name>Project.DAL</Name>

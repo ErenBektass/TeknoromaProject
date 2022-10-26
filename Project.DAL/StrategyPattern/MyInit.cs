@@ -1,4 +1,5 @@
-﻿using Project.DAL.Context;
+﻿using Project.COMMON.Tools;
+using Project.DAL.Context;
 using Project.ENTITIES.Models;
 using System;
 using System.Collections.Generic;
@@ -13,11 +14,22 @@ namespace Project.DAL.StrategyPattern
     {
         protected override void Seed(MyContext context)
         {
-            AppUser admin = new AppUser
-            {
-                 
+            #region Admin
 
-            };
+            AppUser admin = new AppUser();
+
+            admin.UserName = "Eren";
+            admin.Email = "erenbektas95@hotmail.com";
+            admin.Password = Crypt.Decrypt("admin");
+            admin.ConfirmPassword = Crypt.Decrypt("admin");
+            admin.Role = ENTITIES.Enums.UserRole.Admin;
+            admin.Active = true;
+            context.AppUsers.Add(admin);
+            context.SaveChanges();
+            
+           #endregion
+
+
         }
     }
 }

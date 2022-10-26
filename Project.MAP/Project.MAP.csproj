@@ -52,7 +52,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Options\AppUserMap.cs" />
-    <Compile Include="Options\AppUserProfileMap.cs" />
     <Compile Include="Options\BaseMap.cs" />
     <Compile Include="Options\CategoryMap.cs" />
     <Compile Include="Options\EmployeeMap.cs" />
