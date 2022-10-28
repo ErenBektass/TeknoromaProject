@@ -1,4 +1,5 @@
-﻿using Project.COMMON.Tools;
+﻿using Bogus.DataSets;
+using Project.COMMON.Tools;
 using Project.DAL.Context;
 using Project.ENTITIES.Models;
 using System;
@@ -198,12 +199,59 @@ namespace Project.DAL.StrategyPattern
             context.SaveChanges();
             #endregion
 
-            #region
-
+            #region TechnicalServiceRepresentative
+            AppUser tsr = new AppUser
+            {
+                UserName = "technical",
+                Password = Crypt.Decrypt("6666"),
+                ConfirmPassword = Crypt.Decrypt("6666"),
+                Email = "erenbektas95@hotmail.com",
+                Role = ENTITIES.Enums.UserRole.TechnicalServiceRepresentative,
+                Active = true
+            };
+            context.AppUsers.Add(tsr);
+            context.SaveChanges();
+            Employee technical = new Employee
+            {
+                FirstName="Özgün",
+                LastName="Kablocu",
+                PhoneNumber="05543658598",
+                Gender=ENTITIES.Enums.Gender.Male,
+                MonthlySales=12500,
+                Salary=12500               
+            };
+            context.Employees.Add(technical);
+            context.SaveChanges();
             #endregion
 
+            #region Fake Data
+            //KategoriVeUrunBilgileri
+            for (int i = 0; i < 10; i++)
+            {
+                Category c = new Category
+                {
+                    CategoryName = new Commerce("tr").Categories(1)[0],
+                    Description = new Lorem("tr").Sentence(10)
+                };
+                
 
-
+                for (int j = 0; j < 30; j++)
+                {
+                    Product p = new Product
+                    {
+                        ProductName = new Commerce("tr").ProductName(),
+                        UnitPrice = Convert.ToDecimal(new Commerce("tr").Price()),
+                        UnitsInStock = 100,
+                        ImagePath = new Images().LoremPixelUrl(),
+                        
+                    };
+                    c.Products.Add(p);
+                    
+                }
+                context.Categories.Add(c);
+                context.SaveChanges();
+            }
+            #endregion
 
 
 
