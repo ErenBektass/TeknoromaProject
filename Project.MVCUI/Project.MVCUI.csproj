@@ -127,12 +127,36 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="AuthenticationClasses\AccounterAuthentication.cs" />
+    <Compile Include="AuthenticationClasses\AdminAuthentication.cs" />
+    <Compile Include="AuthenticationClasses\EmployeeAuthentication.cs" />
+    <Compile Include="AuthenticationClasses\ManagerAuthentication.cs" />
+    <Compile Include="AuthenticationClasses\MemberAuthentication.cs" />
+    <Compile Include="AuthenticationClasses\MobileSalesAuthentication.cs" />
+    <Compile Include="AuthenticationClasses\SaleAuthentication.cs" />
+    <Compile Include="AuthenticationClasses\TechServiceAuthentication.cs" />
+    <Compile Include="AuthenticationClasses\VisitorAuthentication.cs" />
+    <Compile Include="AuthenticationClasses\WareAuthentication.cs" />
+    <Compile Include="ConsumerDTO\PaymentDTO.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ShoppingTools\Cart.cs" />
+    <Compile Include="Models\ShoppingTools\CartItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VMClasses\AppUserVM.cs" />
+    <Compile Include="VMClasses\CartPageVM.cs" />
+    <Compile Include="VMClasses\CategoryVM.cs" />
+    <Compile Include="VMClasses\EmployeeVM.cs" />
+    <Compile Include="VMClasses\ExpenseVM.cs" />
+    <Compile Include="VMClasses\IssueVM.cs" />
+    <Compile Include="VMClasses\OrderDetailVM.cs" />
+    <Compile Include="VMClasses\OrderVM.cs" />
+    <Compile Include="VMClasses\ProductVM.cs" />
+    <Compile Include="VMClasses\ShipperVM.cs" />
+    <Compile Include="VMClasses\SupplierVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -173,7 +197,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="Areas\" />
+    <Folder Include="OuterTools\" />
+    <Folder Include="Tools\" />
     <Folder Include="Views\Product\" />
   </ItemGroup>
   <ItemGroup>
