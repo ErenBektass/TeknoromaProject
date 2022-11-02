@@ -53,6 +53,9 @@
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -127,6 +130,15 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\Controllers\AppUserController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
+    <Compile Include="Areas\Admin\Controllers\EmployeeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ExpenseController.cs" />
+    <Compile Include="Areas\Admin\Controllers\IssueController.cs" />
+    <Compile Include="Areas\Admin\Controllers\OrderController.cs" />
+    <Compile Include="Areas\Admin\Controllers\OrderDetailController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SupplierController.cs" />
     <Compile Include="AuthenticationClasses\AccounterAuthentication.cs" />
     <Compile Include="AuthenticationClasses\AdminAuthentication.cs" />
     <Compile Include="AuthenticationClasses\EmployeeAuthentication.cs" />
@@ -139,7 +151,9 @@
     <Compile Include="AuthenticationClasses\WareAuthentication.cs" />
     <Compile Include="ConsumerDTO\PaymentDTO.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Controllers\ShoppingController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -154,6 +168,7 @@
     <Compile Include="VMClasses\IssueVM.cs" />
     <Compile Include="VMClasses\OrderDetailVM.cs" />
     <Compile Include="VMClasses\OrderVM.cs" />
+    <Compile Include="VMClasses\PaginationVM.cs" />
     <Compile Include="VMClasses\ProductVM.cs" />
     <Compile Include="VMClasses\ShipperVM.cs" />
     <Compile Include="VMClasses\SupplierVM.cs" />
@@ -197,10 +212,22 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\" />
+    <Folder Include="Areas\Admin\AdminScripts\" />
+    <Folder Include="Areas\Admin\Views\AppUser\" />
+    <Folder Include="Areas\Admin\Views\Category\" />
+    <Folder Include="Areas\Admin\Views\Employee\" />
+    <Folder Include="Areas\Admin\Views\Expense\" />
+    <Folder Include="Areas\Admin\Views\Issue\" />
+    <Folder Include="Areas\Admin\Views\OrderDetail\" />
+    <Folder Include="Areas\Admin\Views\Order\" />
+    <Folder Include="Areas\Admin\Views\Product\" />
+    <Folder Include="Areas\Admin\Views\Supplier\" />
     <Folder Include="OuterTools\" />
     <Folder Include="Tools\" />
+    <Folder Include="Views\Login\" />
     <Folder Include="Views\Product\" />
+    <Folder Include="Views\Register\" />
+    <Folder Include="Views\Shopping\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

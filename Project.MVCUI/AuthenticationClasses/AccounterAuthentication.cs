@@ -10,7 +10,7 @@ namespace Project.MVCUI.AuthenticationClasses
     {
         protected override bool AuthorizeCore(HttpContextBase httpContext)
         {
-            if (httpContext.Session["accounter"]!=null)
+            if (httpContext.Session["accounter"] != null)
             {
                 return true;
             }

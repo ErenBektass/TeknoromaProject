@@ -4,18 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Project.MVCUI.Controllers
+namespace Project.MVCUI.Areas.Admin.Controllers
 {
-    public class ProductController : Controller
+    public class EmployeeController : Controller
     {
-        // GET: Product
+        // GET: Admin/Employee
         public ActionResult Index()
         {
             return View();
         }
-
-        
-
-
     }
 }
