@@ -27,7 +27,7 @@ namespace Project.ENTITIES.Models
 
 
         //Relational Properties
-        public virtual List<Order> Orders { get; set; }
+        public virtual AppUser AppUser  { get; set; }
 
 
     }

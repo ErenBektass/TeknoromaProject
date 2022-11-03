@@ -11,19 +11,20 @@ using System.Threading.Tasks;
 
 namespace Project.DAL.StrategyPattern
 {
-    public class MyInit: CreateDatabaseIfNotExists<MyContext>
+    public class MyInit : CreateDatabaseIfNotExists<MyContext>
     {
         protected override void Seed(MyContext context)
         {
+
             #region Admin
             AppUser au = new AppUser
             {
-              UserName = "Eren",
-              Email = "erenbektas95@hotmail.com",
-              Password = Crypt.Decrypt("123"),
-              ConfirmPassword = Crypt.Decrypt("123"),
-              Role = ENTITIES.Enums.UserRole.Admin,
-              Active = true           
+                UserName = "Eren",
+                Email = "erenbektas95@hotmail.com",
+                Password = Crypt.Encrypt("123"),
+                ConfirmPassword = Crypt.Encrypt("123"),
+                Role = ENTITIES.Enums.UserRole.Admin,
+                Active = true
             };
             context.AppUsers.Add(au);
             context.SaveChanges();
@@ -37,27 +38,30 @@ namespace Project.DAL.StrategyPattern
                 TCNO = "12312412",
                 Age = 27,
                 Gender = ENTITIES.Enums.Gender.Male
-            };           
+            };
             context.Profiles.Add(aup);
             context.SaveChanges();
             #endregion
 
+
+
             #region User
             AppUser user = new AppUser
             {
+
                 UserName = "User",
-                Password = Crypt.Decrypt("2322"),
-                ConfirmPassword = Crypt.Decrypt("2322"),
+                Password = Crypt.Encrypt("2322"),
+                ConfirmPassword = Crypt.Encrypt("2322"),
                 Email = "erenbektas95@hotmail.com",
                 Role = ENTITIES.Enums.UserRole.Member,
                 Active = true
             };
-            
+
             context.AppUsers.Add(user);
             context.SaveChanges();
 
             AppUserProfile up = new AppUserProfile();
-            up.ID = up.ID;
+            up.ID = user.ID;
             up.FirstName = "Hasan";
             up.LastName = "Topcu";
             up.TCNO = "21312322";
@@ -70,24 +74,26 @@ namespace Project.DAL.StrategyPattern
             #region BranchManager
             AppUser bm = new AppUser
             {
-                UserName = "manager",
-                Password = Crypt.Decrypt("222"),
-                ConfirmPassword = Crypt.Decrypt("222"),
-                Email = "erenbektas95@hotmail.com",
+                UserName = "Manager",
+                Password = Crypt.Encrypt("222"),
+                ConfirmPassword = Crypt.Encrypt("222"),              
                 Role = ENTITIES.Enums.UserRole.BranchManager,
                 Active = true
             };
-             context.AppUsers.Add(bm);
-             context.SaveChanges();
+            context.AppUsers.Add(bm);
+            context.SaveChanges();
 
             Employee manager = new Employee
             {
+
+                ID = bm.ID,
                 FirstName = "Haluk",
-                LastName="Saygın",
-                Email= "erenbektas95@hotmail.com",
-                PhoneNumber="055333333333",
-                Gender=ENTITIES.Enums.Gender.Male,
-                Salary=3000
+                LastName = "Saygın",
+                Email = "erenbektas95@hotmail.com",
+                PhoneNumber = "055333333333",
+                TCNO = "2233222222",
+                Gender = ENTITIES.Enums.Gender.Male,
+                Salary = 3000
             };
             context.Employees.Add(manager);
             context.SaveChanges();
@@ -96,25 +102,26 @@ namespace Project.DAL.StrategyPattern
             #region SalesRepresentative
             AppUser sales = new AppUser
             {
-                UserName="Sales",
-                Password=Crypt.Decrypt("333"),
-                ConfirmPassword=Crypt.Decrypt("333"),
-                Email="erenbektas95@hotmail.com",
-                Role=ENTITIES.Enums.UserRole.SalesRepresentative,
-                Active=true
+                UserName = "Sales",
+                Password = Crypt.Encrypt("333"),
+                ConfirmPassword = Crypt.Encrypt("333"),              
+                Role = ENTITIES.Enums.UserRole.SalesRepresentative,
+                Active = true
             };
             context.AppUsers.Add(sales);
             context.SaveChanges();
 
             Employee sls = new Employee
             {
-                FirstName="Gül",
-                LastName="Satar",
-                TCNO="2111111111",
-                PhoneNumber="05463332312",
-                Gender=ENTITIES.Enums.Gender.Woman,
-                MonthlySales=23000,
-                Salary=5500              
+                ID = sales.ID,
+                FirstName = "Gül",
+                LastName = "Satar",
+                TCNO = "2111111111",
+                PhoneNumber = "05463332312",
+                Email = "gülsatar@hotmail.com",
+                Gender = ENTITIES.Enums.Gender.Woman,
+                MonthlySales = 23000,
+                Salary = 5500
             };
             context.Employees.Add(sls);
             context.SaveChanges();
@@ -123,24 +130,25 @@ namespace Project.DAL.StrategyPattern
             #region MobileSalesRepresentative
             AppUser msp = new AppUser
             {
-                UserName="Mobile",
-                Password=Crypt.Decrypt("9999"),
-                ConfirmPassword=Crypt.Decrypt("9999"),
-                Email="erenbektas95@hotmail.com",
-                Role=ENTITIES.Enums.UserRole.MobileSalesRepresentative,
-                Active=true
+                UserName = "Mobile",
+                Password = Crypt.Encrypt("9999"),
+                ConfirmPassword = Crypt.Encrypt("9999"),              
+                Role = ENTITIES.Enums.UserRole.MobileSalesRepresentative,
+                Active = true
             };
             context.AppUsers.Add(msp);
             context.SaveChanges();
             Employee mobile = new Employee
             {
-                FirstName="Fahri",
-                LastName="cepçi",
-                TCNO="8888888888",
-                PhoneNumber="05875256568",
-                Gender=ENTITIES.Enums.Gender.Male,
-                MonthlySales=25000,
-                Salary=7750
+                ID = msp.ID,
+                FirstName = "Fahri",
+                LastName = "cepçi",
+                TCNO = "8888888888",
+                PhoneNumber = "05875256568",
+                Email = "fahricepçi@hotmail.com",
+                Gender = ENTITIES.Enums.Gender.Male,
+                MonthlySales = 25000,
+                Salary = 7750
             };
             context.Employees.Add(mobile);
             context.SaveChanges();
@@ -150,24 +158,25 @@ namespace Project.DAL.StrategyPattern
             #region WarehouseRepresentative
             AppUser wh = new AppUser
             {
-                UserName="ware",
-                Password=Crypt.Decrypt("5555"),
-                ConfirmPassword=Crypt.Decrypt("5555"),
-                Email="erenbektas95@hotmail.com",
-                Role=ENTITIES.Enums.UserRole.WarehouseRepresentative,
-                Active=true
+                UserName = "Ware",
+                Password = Crypt.Encrypt("5555"),
+                ConfirmPassword = Crypt.Encrypt("5555"),               
+                Role = ENTITIES.Enums.UserRole.WarehouseRepresentative,
+                Active = true
             };
             context.AppUsers.Add(wh);
             context.SaveChanges();
             Employee ware = new Employee
             {
-                FirstName="Kerim",
-                LastName="Zulacı",
-                TCNO="333333333",
-                PhoneNumber="05554443321",
-                Gender=ENTITIES.Enums.Gender.Male,
-                MonthlySales=18500,
-                Salary=9000               
+                ID = wh.ID,
+                FirstName = "Kerim",
+                LastName = "Zulacı",
+                TCNO = "333333333",
+                PhoneNumber = "05554443321",
+                Email = "kerimzulacı@hotmail.com",
+                Gender = ENTITIES.Enums.Gender.Male,
+                MonthlySales = 18500,
+                Salary = 9000
             };
             context.Employees.Add(ware);
             context.SaveChanges();
@@ -176,10 +185,9 @@ namespace Project.DAL.StrategyPattern
             #region AccountingRepresentative
             AppUser ar = new AppUser
             {
-                UserName = "accounting",
-                Password = Crypt.Decrypt("88888"),
-                ConfirmPassword = Crypt.Decrypt("88888"),
-                Email = "erenbektas95@hotmail.com",
+                UserName = "Accounting",
+                Password = Crypt.Encrypt("88888"),
+                ConfirmPassword = Crypt.Encrypt("88888"),               
                 Role = ENTITIES.Enums.UserRole.AccountingRepresentative,
                 Active = true
             };
@@ -187,13 +195,15 @@ namespace Project.DAL.StrategyPattern
             context.SaveChanges();
             Employee accouting = new Employee
             {
-                FirstName="Feyza",
-                LastName="Paragöz",
-                TCNO="666666666",
-                PhoneNumber="0554555444231",
-                Gender=ENTITIES.Enums.Gender.Woman,
-                MonthlySales=13500,
-                Salary=5900
+                ID = ar.ID,
+                FirstName = "Feyza",
+                LastName = "Paragöz",
+                TCNO = "666666666",
+                PhoneNumber = "0554555444231",
+                Email = "feyzaparagoz@hotmail.com",
+                Gender = ENTITIES.Enums.Gender.Woman,
+                MonthlySales = 13500,
+                Salary = 5900
             };
             context.Employees.Add(accouting);
             context.SaveChanges();
@@ -203,9 +213,8 @@ namespace Project.DAL.StrategyPattern
             AppUser tsr = new AppUser
             {
                 UserName = "technical",
-                Password = Crypt.Decrypt("6666"),
-                ConfirmPassword = Crypt.Decrypt("6666"),
-                Email = "erenbektas95@hotmail.com",
+                Password = Crypt.Encrypt("6666"),
+                ConfirmPassword = Crypt.Encrypt("6666"),               
                 Role = ENTITIES.Enums.UserRole.TechnicalServiceRepresentative,
                 Active = true
             };
@@ -213,18 +222,21 @@ namespace Project.DAL.StrategyPattern
             context.SaveChanges();
             Employee technical = new Employee
             {
-                FirstName="Özgün",
-                LastName="Kablocu",
-                PhoneNumber="05543658598",
-                Gender=ENTITIES.Enums.Gender.Male,
-                MonthlySales=12500,
-                Salary=12500               
+                ID = tsr.ID,
+                FirstName = "Özgün",
+                LastName = "Kablocu",
+                PhoneNumber = "05543658598",
+                Email = "ozgunbablocu@hotmail.com",
+                TCNO ="222232322",
+                Gender = ENTITIES.Enums.Gender.Male,
+                MonthlySales = 12500,
+                Salary = 12500
             };
             context.Employees.Add(technical);
             context.SaveChanges();
             #endregion
 
-            #region Fake Data
+            /*#region Fake Data
             //KategoriVeUrunBilgileri
             for (int i = 0; i < 10; i++)
             {
@@ -233,7 +245,7 @@ namespace Project.DAL.StrategyPattern
                     CategoryName = new Commerce("tr").Categories(1)[0],
                     Description = new Lorem("tr").Sentence(10)
                 };
-                
+
 
                 for (int j = 0; j < 30; j++)
                 {
@@ -243,15 +255,20 @@ namespace Project.DAL.StrategyPattern
                         UnitPrice = Convert.ToDecimal(new Commerce("tr").Price()),
                         UnitsInStock = 100,
                         ImagePath = new Images().LoremPixelUrl(),
-                        
+
                     };
                     c.Products.Add(p);
-                    
+
                 }
                 context.Categories.Add(c);
                 context.SaveChanges();
             }
             #endregion
+            */
+
+
+
+
 
 
 

@@ -10,7 +10,7 @@ namespace Project.COMMON.Tools
     public static class Crypt
     {
         private static string Key { get; set; } = "a?2_2/*/**-le21dn1jıondı1jd";
-        public static string Decrypt(string cipher)
+        public static string Encrypt(string cipher)
         {
             
             byte[] data = UTF8Encoding.UTF8.GetBytes(cipher);
@@ -34,7 +34,7 @@ namespace Project.COMMON.Tools
 
                       
         }     
-        public static string Encrypt(string text)
+        public static string Decrypt(string text)
         {
             byte[] data = Convert.FromBase64String(text);
 
