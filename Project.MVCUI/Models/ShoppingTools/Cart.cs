@@ -32,7 +32,7 @@ namespace Project.MVCUI.Models.ShoppingTools
 
         }
 
-        public void SepettenCıkar(int id)
+        public void SepettenCikar(int id)
         {
             if (_sepetim[id].Amount>1)
             {

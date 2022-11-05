@@ -76,7 +76,8 @@ namespace Project.DAL.StrategyPattern
             {
                 UserName = "Manager",
                 Password = Crypt.Encrypt("222"),
-                ConfirmPassword = Crypt.Encrypt("222"),              
+                ConfirmPassword = Crypt.Encrypt("222"),
+                Email = "erenbektas95@hotmail.com",
                 Role = ENTITIES.Enums.UserRole.BranchManager,
                 Active = true
             };
@@ -104,7 +105,8 @@ namespace Project.DAL.StrategyPattern
             {
                 UserName = "Sales",
                 Password = Crypt.Encrypt("333"),
-                ConfirmPassword = Crypt.Encrypt("333"),              
+                ConfirmPassword = Crypt.Encrypt("333"),
+                Email = "gülsatar@hotmail.com",
                 Role = ENTITIES.Enums.UserRole.SalesRepresentative,
                 Active = true
             };
@@ -132,7 +134,8 @@ namespace Project.DAL.StrategyPattern
             {
                 UserName = "Mobile",
                 Password = Crypt.Encrypt("9999"),
-                ConfirmPassword = Crypt.Encrypt("9999"),              
+                ConfirmPassword = Crypt.Encrypt("9999"),
+                Email = "fahricepçi@hotmail.com",
                 Role = ENTITIES.Enums.UserRole.MobileSalesRepresentative,
                 Active = true
             };
@@ -160,7 +163,8 @@ namespace Project.DAL.StrategyPattern
             {
                 UserName = "Ware",
                 Password = Crypt.Encrypt("5555"),
-                ConfirmPassword = Crypt.Encrypt("5555"),               
+                ConfirmPassword = Crypt.Encrypt("5555"),
+                Email = "kerimzulacı@hotmail.com",
                 Role = ENTITIES.Enums.UserRole.WarehouseRepresentative,
                 Active = true
             };
@@ -187,7 +191,8 @@ namespace Project.DAL.StrategyPattern
             {
                 UserName = "Accounting",
                 Password = Crypt.Encrypt("88888"),
-                ConfirmPassword = Crypt.Encrypt("88888"),               
+                ConfirmPassword = Crypt.Encrypt("88888"),
+                Email = "feyzaparagoz@hotmail.com",
                 Role = ENTITIES.Enums.UserRole.AccountingRepresentative,
                 Active = true
             };
@@ -214,6 +219,7 @@ namespace Project.DAL.StrategyPattern
             {
                 UserName = "technical",
                 Password = Crypt.Encrypt("6666"),
+                Email = "ozgunbablocu@hotmail.com",
                 ConfirmPassword = Crypt.Encrypt("6666"),               
                 Role = ENTITIES.Enums.UserRole.TechnicalServiceRepresentative,
                 Active = true
@@ -236,7 +242,7 @@ namespace Project.DAL.StrategyPattern
             context.SaveChanges();
             #endregion
 
-            /*#region Fake Data
+            #region Fake Data
             //KategoriVeUrunBilgileri
             for (int i = 0; i < 10; i++)
             {
@@ -264,7 +270,8 @@ namespace Project.DAL.StrategyPattern
                 context.SaveChanges();
             }
             #endregion
-            */
+           
+            
 
 
 

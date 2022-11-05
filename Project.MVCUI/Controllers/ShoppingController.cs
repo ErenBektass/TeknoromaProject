@@ -52,6 +52,47 @@ namespace Project.MVCUI.Controllers
             Session["scart"] = c;
             return RedirectToAction("ShoppingList");
         }
+        public ActionResult CartPage()
+        {
+            if (Session["scart"]!=null)
+            {
+                CartPageVM cpvm = new CartPageVM();
+                Cart c = Session["scart"] as Cart;
+                cpvm.Cart = c;
+                return View(cpvm);
+            }
+            TempData["bos"] = "Sepetinizde ürün bulunmamaktadır";
+            return RedirectToAction("Shopping List");
+        }
+        public ActionResult DeleteFromCart(int id)
+        {
+            if (Session["scart"]!=null)
+            {
+                Cart c = Session["scart"] as Cart;
+                c.SepettenCikar(id);
+                if (c.Sepetim.Count==0)
+                {
+                    Session.Remove("scart");
+                    TempData["sepetBos"] = "Sepetinizdeki tüm ürünler cıkartılmıstır";
+                    return RedirectToAction("Shopping List");
+                }
+                return RedirectToAction("Cartpage");
+            }
+            return RedirectToAction("ShoppingList");
+        }
+        public ActionResult ConfirmOrder()
+        {
+            AppUser currentUser;
+            if (Session["member"] != null)
+            {
+                currentUser = Session["member"] as AppUser;
+
+            }
+            else TempData["anonim"] = "kullanıcı üye degil";
+            return View();
+        }
+       
+        
 
 
 
