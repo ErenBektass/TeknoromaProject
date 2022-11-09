@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project.BLL.DesignPatterns.GenericRepository.ConcRep;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,20 @@ namespace Project.MVCUI.Controllers
 {
     public class RegisterController : Controller
     {
-        // GET: Register
-        public ActionResult Index()
+        AppUserRepository _apRep;
+        AppUserProfileRepository _apUserProfile;
+
+        public RegisterController()
+        {
+            _apRep = new AppUserRepository();
+            _apUserProfile = new AppUserProfileRepository();
+        }
+        public ActionResult RegisterNow()
         {
             return View();
         }
+        
+        
+
     }
 }

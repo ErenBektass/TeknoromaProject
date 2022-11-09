@@ -77,7 +77,7 @@ namespace Project.DAL.StrategyPattern
                 UserName = "Manager",
                 Password = Crypt.Encrypt("222"),
                 ConfirmPassword = Crypt.Encrypt("222"),
-                Email = "erenbektas95@hotmail.com",
+                Email = "Haluksaygın@hotmail.com",
                 Role = ENTITIES.Enums.UserRole.BranchManager,
                 Active = true
             };
@@ -90,11 +90,13 @@ namespace Project.DAL.StrategyPattern
                 ID = bm.ID,
                 FirstName = "Haluk",
                 LastName = "Saygın",
-                Email = "erenbektas95@hotmail.com",
+                Email = "Haluksaygın@hotmail.com",
                 PhoneNumber = "055333333333",
                 TCNO = "2233222222",
                 Gender = ENTITIES.Enums.Gender.Male,
-                Salary = 3000
+                Salary = 3000,
+                MonthlySales=45000
+                
             };
             context.Employees.Add(manager);
             context.SaveChanges();
@@ -217,7 +219,7 @@ namespace Project.DAL.StrategyPattern
             #region TechnicalServiceRepresentative
             AppUser tsr = new AppUser
             {
-                UserName = "technical",
+                UserName = "Technical",
                 Password = Crypt.Encrypt("6666"),
                 Email = "ozgunbablocu@hotmail.com",
                 ConfirmPassword = Crypt.Encrypt("6666"),               
