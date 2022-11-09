@@ -11,6 +11,7 @@ namespace Project.MVCUI.VMClasses
         public AppUser  AppUser { get; set; }
         public List<AppUser> AppUsers { get; set; }
         public List<Order> Orders { get; set; }
+        public AppUserProfile Profile { get; set; }
         public List<AppUserProfile>  AppUserProfiles { get; set; }
     }
 }
