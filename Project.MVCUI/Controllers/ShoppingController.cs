@@ -95,7 +95,7 @@ namespace Project.MVCUI.Controllers
             return View();
         }
 
-        //https://localhost:44366/api/Payment/ReceivePayment
+        //https://localhost:44350/api/Payment/ReceivePayment mail senden acinca buraya yapistiricaksin local kodunu
         [HttpPost]
         public ActionResult ConfirmOrder(OrderVM ovm)
         {

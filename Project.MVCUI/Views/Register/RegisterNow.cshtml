@@ -1,0 +1,78 @@
+﻿@model AppUserVM
+
+
+@{
+    ViewBag.Title = "Kayıt";
+}
+
+<div class="login-body">
+
+    <div class="container">
+
+        @using (Html.BeginForm("Register", "RegisterNow", FormMethod.Post, new { @class = "form-signin" }))
+         {
+                <h6 class="text-center text-danger">@ViewBag.ZatenVar</h6>
+                <h6 class="text-center text-danger">@TempData["guest"]</h6>
+
+                <div class="login-wrap">
+
+                    <div class="form-title">
+
+
+
+                        <h1 class="form-title text-center">KayıtOl</h1>
+                    </div>
+                    <label for="name" class="title">İsim</label>
+                    @Html.TextBoxFor(x => x.Profile.FirstName, new {@class="form-control", placeholder="İsminizi giriniz"})
+
+
+
+
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+</div>
+

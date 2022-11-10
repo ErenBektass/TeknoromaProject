@@ -44,7 +44,7 @@ namespace Project.MVCUI.Controllers
                 return View();
             }
             //Kullanıcı basarılı bir şekilde register işlemini tamamladıysa ona mail gönder...
-            string gonderilecekEmail = "Tebrikler...Hesabınız olusturulmustur...Hesabınızı aktive etmek https://localhost:44306/Register/Activation/" + user.ActivationCode + "linkine tıklayabilirsiniz";
+            string gonderilecekEmail = "Tebrikler...Hesabınız olusturulmustur...Hesabınızı aktive etmek https://localhost:44350/Register/Activation/" + user.ActivationCode + "linkine tıklayabilirsiniz";
             MailService.Send(user.Email,body: gonderilecekEmail,subject: "Hesap AKtivasyon!!!");
             _apRep.Add(user);
             if (!string.IsNullOrEmpty(profile.FirstName)& ! string.IsNullOrEmpty(profile.LastName)&!string.IsNullOrEmpty(profile.Address)&!string.IsNullOrEmpty(profile.TCNO))
