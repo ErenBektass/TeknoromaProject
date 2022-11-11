@@ -24,8 +24,8 @@ namespace Project.BLL.DesignPatterns.GenericRepository.BaseRepository
         {
             _db.SaveChanges();
         }
-
-        public void Add(T item)
+        //Eger bu Add metodunun miras verildigi yerlerde farklı şekilde davranmasını istiyorsak bu metodu virtual olarak işaretleyebiliriz...Tabii ki o miras verilen yerde metodun calısabilmesi _db  field'ına ve Save metoduna ihtiyac duyulacagından dolayı _bu yapılar güvenligi bozmamak adına protected erişim belirteci ile işaretlenmiştir...
+        public virtual void Add(T item)
         {
             _db.Set<T>().Add(item);
             Save();
@@ -121,6 +121,8 @@ namespace Project.BLL.DesignPatterns.GenericRepository.BaseRepository
             item.Status = ENTITIES.Enums.DataStatus.Updated;
             item.ModifiedDate = DateTime.Now;
             T toBeUpdated = Find(item.ID);
+
+            //Entry metodu veritabanında bir güncelleme yapılacagını bildirerek giriş(baglantı) yapılmasını saglayan bir metottur...
             _db.Entry(toBeUpdated).CurrentValues.SetValues(item);
             Save();
         }

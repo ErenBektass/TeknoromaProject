@@ -5,74 +5,43 @@
     ViewBag.Title = "Kayıt";
 }
 
-<div class="login-body">
-
+<body class="login-body">
     <div class="container">
+        <h2>@ViewBag.ZatenVar</h2>
 
-        @using (Html.BeginForm("Register", "RegisterNow", FormMethod.Post, new { @class = "form-signin" }))
+
+        @using (Html.BeginForm("RegisterNow", "Register", FormMethod.Post, new { @class = "form-signin" }))
          {
-                <h6 class="text-center text-danger">@ViewBag.ZatenVar</h6>
-                <h6 class="text-center text-danger">@TempData["guest"]</h6>
 
-                <div class="login-wrap">
+            <br /> <center><h2>Uye olunuz</h2></center>
+                   <div class="login-wrap">
+                       @Html.TextBoxFor(x => x.AppUser.UserName, new { @class = "form-control", placeholder = "Kullanıcı ismi belirleyin" })
+                       @Html.PasswordFor(x => x.AppUser.Password, new { @class = "form-control", placeholder = "Sifre belirleyin" })
+                       @Html.TextBoxFor(x => x.AppUser.Email, new { @class = "form-control", placeholder = "Email giriniz" })
 
-                    <div class="form-title">
+                       <br />
+                       Profil Bilgileri (İstege baglı) <br />
+                       @Html.TextBoxFor(x => x.Profile.FirstName, new { @class = "form-control", placeholder = "İsminizi giriniz" })
+                       @Html.TextBoxFor(x => x.Profile.LastName, new { @class = "form-control", placeholder = "Soy isim giriniz" })
 
+                       <br />
 
+                       <button class="btn btn-primary">Üye ol</button>
 
-                        <h1 class="form-title text-center">KayıtOl</h1>
-                    </div>
-                    <label for="name" class="title">İsim</label>
-                    @Html.TextBoxFor(x => x.Profile.FirstName, new {@class="form-control", placeholder="İsminizi giriniz"})
+                       <div>
+                           @Html.ActionLink("Giriş yap", "Login", "Home")
+                       </div>
 
-
-
-
-
-                </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                   </div>
 
          }
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
-</div>
 
+
+
+
+</body>

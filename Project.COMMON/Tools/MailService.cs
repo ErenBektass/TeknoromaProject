@@ -15,6 +15,9 @@ namespace Project.COMMON.Tools
             MailAddress senderEmail = new MailAddress(sender);
             MailAddress receiverEmail = new MailAddress(receiver);
 
+            // Bizim Email işlemlerimiz SMTP'ye göre yapılır...
+            //Kullandıgınız gmail hesabının baska uygulamalar tarafından mesaj gönderme özelligini acmalısınız...
+
             SmtpClient smtp = new SmtpClient()
             {
                 Host = "smtp.gmail.com",
