@@ -43,8 +43,6 @@ namespace Project.DAL.StrategyPattern
             context.SaveChanges();
             #endregion
 
-
-
             #region User
             AppUser user = new AppUser
             {
@@ -94,8 +92,8 @@ namespace Project.DAL.StrategyPattern
                 PhoneNumber = "055333333333",
                 TCNO = "2233222222",
                 Gender = ENTITIES.Enums.Gender.Male,
-                Salary = 3000,
-                MonthlySales=45000
+                Salary = 7000
+                
                 
             };
             context.Employees.Add(manager);
@@ -151,8 +149,7 @@ namespace Project.DAL.StrategyPattern
                 TCNO = "8888888888",
                 PhoneNumber = "05875256568",
                 Email = "fahricepçi@hotmail.com",
-                Gender = ENTITIES.Enums.Gender.Male,
-                MonthlySales = 25000,
+                Gender = ENTITIES.Enums.Gender.Male,               
                 Salary = 7750
             };
             context.Employees.Add(mobile);
