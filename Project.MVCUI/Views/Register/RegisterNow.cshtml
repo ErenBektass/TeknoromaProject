@@ -13,9 +13,11 @@
         @using (Html.BeginForm("RegisterNow", "Register", FormMethod.Post, new { @class = "form-signin" }))
          {
 
-            <br /> <center><h2>Uye olunuz</h2></center>
+                   <br /> <center><h2>Uye olunuz</h2></center>
                    <div class="login-wrap">
+                       <label>Isim</label>
                        @Html.TextBoxFor(x => x.AppUser.UserName, new { @class = "form-control", placeholder = "Kullanıcı ismi belirleyin" })
+                       <label>Sifre</label>
                        @Html.PasswordFor(x => x.AppUser.Password, new { @class = "form-control", placeholder = "Sifre belirleyin" })
                        @Html.TextBoxFor(x => x.AppUser.Email, new { @class = "form-control", placeholder = "Email giriniz" })
 
