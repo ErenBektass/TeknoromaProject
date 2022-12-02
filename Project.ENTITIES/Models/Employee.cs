@@ -26,7 +26,7 @@ namespace Project.ENTITIES.Models
         public decimal Salary { get; set; }
 
 
-        //Relational Properties
+        //Relational Properties 
         public virtual AppUser AppUser  { get; set; }
 
 
