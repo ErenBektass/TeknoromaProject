@@ -17,7 +17,7 @@ namespace Project.ENTITIES.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string TCNO { get; set; }
-        public string PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; } 
         public string Email { get; set; }
         public DateTime? BirthDate { get; set; }
         public Gender Gender { get; set; }
