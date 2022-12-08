@@ -28,7 +28,7 @@ namespace Project.BLL.DesignPatterns.GenericRepository.IntRep
         void Destroy(T item); //bu metot veriyi yok eder
         void DestroyRange(List<T> list);
 
-        //Linq İfaedeleri
+            
         List<T> Where(Expression<Func<T, bool>> exp);
 
         //Delegate Kullanımı
