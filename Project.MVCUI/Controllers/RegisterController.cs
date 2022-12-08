@@ -25,7 +25,7 @@ namespace Project.MVCUI.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult RegisterNow(AppUserVM apvm)
+        public ActionResult RegisterNow(AppUserVM apvm)  
         {
             AppUser user = apvm.AppUser;
             AppUserProfile profile = apvm.Profile;

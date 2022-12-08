@@ -15,8 +15,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.MAP", "Project.MAP\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.MVCUI", "Project.MVCUI\Project.MVCUI.csproj", "{ACC0A64E-069E-45BF-9B61-3A2C874A1739}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.SimilationWinUI", "Project.SimilationWinUI\Project.SimilationWinUI.csproj", "{6DD874DD-BCEA-48BC-9E07-644CCAE137C9}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,10 +45,6 @@ Global
 		{ACC0A64E-069E-45BF-9B61-3A2C874A1739}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACC0A64E-069E-45BF-9B61-3A2C874A1739}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ACC0A64E-069E-45BF-9B61-3A2C874A1739}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6DD874DD-BCEA-48BC-9E07-644CCAE137C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6DD874DD-BCEA-48BC-9E07-644CCAE137C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6DD874DD-BCEA-48BC-9E07-644CCAE137C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6DD874DD-BCEA-48BC-9E07-644CCAE137C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
