@@ -17,13 +17,16 @@
                    <div class="login-wrap">
                        <label>Isim</label>
                        @Html.TextBoxFor(x => x.AppUser.UserName, new { @class = "form-control", placeholder = "Kullanıcı ismi belirleyin" })
+                       <br />
                        <label>Sifre</label>
-                       @Html.PasswordFor(x => x.AppUser.Password, new { @class = "form-control", placeholder = "Sifre belirleyin" })
+                       @Html.PasswordFor(x => x.AppUser.Password, new { @class = "form-control", placeholder = "Sifre belirleyin", @required = "required" })
+                       <br />
                        @Html.TextBoxFor(x => x.AppUser.Email, new { @class = "form-control", placeholder = "Email giriniz" })
 
                        <br />
                        Profil Bilgileri (İstege baglı) <br />
                        @Html.TextBoxFor(x => x.Profile.FirstName, new { @class = "form-control", placeholder = "İsminizi giriniz" })
+                       <br />
                        @Html.TextBoxFor(x => x.Profile.LastName, new { @class = "form-control", placeholder = "Soy isim giriniz" })
 
                        <br />
@@ -31,19 +34,14 @@
                        <button class="btn btn-primary">Üye ol</button>
 
                        <div>
-                           @Html.ActionLink("Giriş yap", "Login", "Home")
+                           @Html.ActionLink("Giriş yap", "Login", "Login")
                        </div>
 
                    </div>
 
          }
 
-
-
-
     </div>
-
-
 
 
 </body>

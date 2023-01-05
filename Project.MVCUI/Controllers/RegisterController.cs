@@ -31,7 +31,7 @@ namespace Project.MVCUI.Controllers
             AppUserProfile profile = apvm.Profile;
 
             user.Password = Crypt.Encrypt(user.Password);//sifreyi kriptoladık
-            user.ConfirmPassword = Crypt.Encrypt(user.ConfirmPassword);
+            user.ConfirmPassword = Crypt.Encrypt(user.Password);
 
             if (_apRep.Any(x=>x.UserName==user.UserName))
             {
@@ -44,7 +44,7 @@ namespace Project.MVCUI.Controllers
                 return View();
             }
             //Kullanıcı basarılı bir şekilde register işlemini tamamladıysa ona mail gönder...
-            string gonderilecekEmail = "Tebrikler...Hesabınız olusturulmustur...Hesabınızı aktive etmek https://localhost:44350/Register/Activation/" + user.ActivationCode + "linkine tıklayabilirsiniz";
+            string gonderilecekEmail = "Tebrikler...Hesabınız olusturulmustur...Hesabınızı aktive etmek https://localhost:44350/Register/Activation/" + user.ActivationCode + " linkine tıklayabilirsiniz";
             MailService.Send(user.Email,body: gonderilecekEmail,subject: "Hesap AKtivasyon!!!");
             _apRep.Add(user);
             if (!string.IsNullOrEmpty(profile.FirstName)& ! string.IsNullOrEmpty(profile.LastName)&!string.IsNullOrEmpty(profile.Address)&!string.IsNullOrEmpty(profile.TCNO))
@@ -64,11 +64,11 @@ namespace Project.MVCUI.Controllers
                 aktifEdilecek.Active = true;
                 _apRep.Update(aktifEdilecek);
                 TempData["HesapAktif"]= "Hesabınız aktif hale getirildi";
-                return RedirectToAction("Login", "Home");
+                return RedirectToAction("Login", "Login");
             }
             //Supheli bir aktivite
             TempData["HesapAktifMi"]= "Hesabınız bulunamadı";
-            return RedirectToAction("Login", "Home");
+            return RedirectToAction("Login", "Login");
         }
         public ActionResult RegisterOK()
         {
