@@ -153,6 +153,7 @@
     <Compile Include="AuthenticationClasses\VisitorAuthentication.cs" />
     <Compile Include="AuthenticationClasses\WareAuthentication.cs" />
     <Compile Include="ConsumerDTO\PaymentDTO.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
@@ -2002,6 +2003,13 @@
     <Content Include="OuterTools\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="OuterTools\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Category\CategoryList.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\AddCategory.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\UpdateProduct.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\CategoryDetails.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\UpdateCategory.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\AddProduct.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\ProductList.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2031,11 +2039,13 @@
     <Content Include="Views\Register\RegisterNow.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Shopping\ShoppingList.cshtml" />
+    <Content Include="Views\Contact\AddTechnicalIssue.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
+    <Folder Include="Views\Contanct\" />
     <Folder Include="Views\Product\" />
   </ItemGroup>
   <ItemGroup>

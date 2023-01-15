@@ -23,10 +23,17 @@ namespace Project.MVCUI.Areas.Admin.Controllers
         {
             CategoryVM cvm = id == null ? new CategoryVM
             {
-                Categories = _cRep.GetAll()
+                Categories = _cRep.GetAll().Where(x => x.Status != ENTITIES.Enums.DataStatus.Deleted).ToList()
 
             } : new CategoryVM { Categories = _cRep.Where(x => x.ID == id) };
             return View(cvm);
+        }
+
+        // GET: Admin/CategoryDetails
+        public ActionResult CategoryDetails(int id)
+        {
+            CategoryVM categoryVM = new CategoryVM { Category = _cRep.Where(x => x.ID == id).FirstOrDefault() };
+            return View(categoryVM);
         }
         public ActionResult AddCategory()
         {

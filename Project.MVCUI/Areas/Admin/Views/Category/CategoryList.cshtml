@@ -1,0 +1,35 @@
+﻿@model CategoryVM
+
+@{
+    ViewBag.Title = "CategoryList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>CategoryList</h2>
+
+<p>
+    @Html.ActionLink("Create New", "AddCategory")
+</p>
+<table class="table">
+    <tr>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model.Categories) {
+    <tr>
+
+        <td>@item.ID</td>
+        <td>
+            @item.CategoryName
+        </td>
+        <td>@item.Description</td>
+        <td>@item.Status</td>
+        <td>
+            @Html.ActionLink("Güncelle", "UpdateCategory", new {  id=item.ID  }) |
+            @Html.ActionLink("Detay", "CategoryDetails", new {  id=item.ID  }) |
+            @Html.ActionLink("Sil", "DeleteCategory", new {  id=item.ID  })
+        </td>
+    </tr>
+}
+
+</table>

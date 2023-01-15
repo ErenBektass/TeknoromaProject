@@ -1,0 +1,25 @@
+﻿@model CategoryVM
+
+@{
+    ViewBag.Title = "CategoryDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>CategoryDetails</h2>
+
+<div>
+    <h4>CategoryVM</h4>
+    <hr />
+
+    <h4><b>Name:</b> @Model.Category.CategoryName</h4>
+    <h4><b>Description:</b> @Model.Category.Description</h4>
+    <h4><b>Status:</b> @Model.Category.Status</h4>
+
+
+    <dl class="dl-horizontal">
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "CategoryList", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "CategoryList")
+</p>

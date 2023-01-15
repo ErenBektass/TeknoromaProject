@@ -1,0 +1,35 @@
+﻿@model ProductVM
+
+@{
+    ViewBag.Title = "ProductList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ProdcutList</h2>
+
+<p>
+    @Html.ActionLink("Create New", "AddProduct")
+</p>
+<table class="table">
+    <tr>
+        <th></th>
+    </tr>
+
+    @foreach (Product item in Model.Products)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>
+                @item.ProductName
+            </td>
+            <td>@item.UnitPrice</td>
+            <td>@item.UnitsInStock</td>
+            <td>
+                @Html.ActionLink("Güncelle", "UpdateProduct", new { id = item.ID }) |
+                @Html.ActionLink("Detay", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Sil", "DeleteProduct", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>

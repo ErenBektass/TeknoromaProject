@@ -23,7 +23,7 @@ namespace Project.MVCUI.Areas.Admin.Controllers
         }
 
         
-        public ActionResult ProdcutList(int ? id)
+        public ActionResult ProductList(int ? id)
         {
             ProductVM pvm = new ProductVM
             {
