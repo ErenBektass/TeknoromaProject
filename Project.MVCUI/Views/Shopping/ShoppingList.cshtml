@@ -1,45 +1,28 @@
-﻿
+﻿@model PaginationVM
+
 @{
     ViewBag.Title = "ShoppingList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>ShoppingList</h2>
 
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th></th>
+    </tr>
 
-    <table border="2">
+@foreach (Category item in Model.Categories) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
 
-        <!-- tablo tanımı başlangıcı -->
-        <caption> ÜLKELER VE NÜFUSLARI </caption>
-
-        <!-- başlık tanımı -->
-        <tr>
-
-            <!-- başlık satırı tanımı -->
-            <th>ÜLKE ADI</th>
-            <th>NÜFUSU</th>
-        </tr>
-
-        <!-- başlık satırı tanımının sonu -->
-        <tr>
-
-            <!-- ilk satır tanımı -->
-            <td>AVUSTURYA </td>
-            <td>8,000,000</td>
-        </tr>
-
-        <!-- ilk satır tanımının sonu -->
-        <tr>
-            <td>ALMANYA</td>
-            <td>80,000,000</td>
-        </tr>
-        <tr>
-
-            <!-- son satır tanımının başlangıcı -->
-            <td>TÜRKİYE</td>
-            <td>73,000,000</td>
-        </tr>
-
-        <!-- son satır tanımının sonu -->
-    </table>
-
-    <!-- tablo tanımının sonu -->
+</table>

@@ -23,14 +23,20 @@ namespace Project.MVCUI.Areas.Admin.Controllers
         }
 
         
-        public ActionResult ProductList(int ? id)
+        public ActionResult ProductList(int? id)
         {
-            ProductVM pvm = new ProductVM
+            ProductVM pvm = id == null ? new ProductVM
             {
-                Products=id==null ? _pRep.GetAll() : _pRep.Where(x=>x.CategoryID==id)
-            };
+                Products= _pRep.GetAll().Where(x => x.Status != ENTITIES.Enums.DataStatus.Deleted).ToList()
+            } : new ProductVM { Categories = _cRep.Where(x => x.ID == id) };
             return View(pvm);
 
+        }
+        // GET: Admin/ProductDetails
+        public ActionResult ProductDetails(int id)
+        {
+            ProductVM pvm = new ProductVM { Product = _pRep.Where(x => x.ID == id).FirstOrDefault() };
+            return View(pvm);
         }
         public ActionResult AddProduct()
         {

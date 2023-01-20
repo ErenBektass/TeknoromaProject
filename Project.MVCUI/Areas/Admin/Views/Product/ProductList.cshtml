@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>ProdcutList</h2>
+<h2>ProductList</h2>
 
 <p>
     @Html.ActionLink("Create New", "AddProduct")
@@ -24,9 +24,17 @@
             </td>
             <td>@item.UnitPrice</td>
             <td>@item.UnitsInStock</td>
+            @if (item.Category == null)
+                {
+                    <td>Kategorisi Belirtilmemiş</td>
+            }
+            else
+            {
+                    <td>@item.Category.CategoryName</td>
+            }
             <td>
                 @Html.ActionLink("Güncelle", "UpdateProduct", new { id = item.ID }) |
-                @Html.ActionLink("Detay", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Detay", "ProductDetails", new { id = item.ID }) |
                 @Html.ActionLink("Sil", "DeleteProduct", new { id = item.ID })
             </td>
         </tr>

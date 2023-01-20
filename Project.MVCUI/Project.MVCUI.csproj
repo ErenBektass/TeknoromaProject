@@ -2010,6 +2010,7 @@
     <Content Include="Areas\Admin\Views\Category\UpdateCategory.cshtml" />
     <Content Include="Areas\Admin\Views\Product\AddProduct.cshtml" />
     <Content Include="Areas\Admin\Views\Product\ProductList.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\ProductDetails.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2038,8 +2039,8 @@
     <Content Include="Views\Register\RegisterOK.cshtml" />
     <Content Include="Views\Register\RegisterNow.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
-    <Content Include="Views\Shopping\ShoppingList.cshtml" />
     <Content Include="Views\Contact\AddTechnicalIssue.cshtml" />
+    <Content Include="Views\Shopping\ShoppingList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
