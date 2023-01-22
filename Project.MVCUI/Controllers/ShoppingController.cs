@@ -11,6 +11,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI;
 
 namespace Project.MVCUI.Controllers
 {
@@ -28,7 +29,19 @@ namespace Project.MVCUI.Controllers
             _pRep = new ProductRepository();
             _cRep = new CategoryRepository();
         }
-        public ActionResult ShoppingList(int? page,int? categoryID)
+        public ActionResult ShoppingList()
+        {
+            Cart c = Session["scart"] == null ? new Cart() : Session["scart"] as Cart;
+            List<CartItem> cards = c.Sepetim;
+            ShoppingVM spvm = new ShoppingVM
+            {
+                Cards = cards
+            };
+
+            return View(spvm);
+        }
+
+        public ActionResult ShoppingList_Eski(int? page,int? categoryID)
         {
             PaginationVM pavm = new PaginationVM
             {
@@ -77,9 +90,9 @@ namespace Project.MVCUI.Controllers
                 {
                     Session.Remove("scart");
                     TempData["sepetBos"] = "Sepetinizdeki tüm ürünler cıkartılmıstır";
-                    return RedirectToAction("Shopping List");
+                    return RedirectToAction("ShoppingList");
                 }
-                return RedirectToAction("Cartpage");
+                return RedirectToAction("ShoppingList");
             }
             return RedirectToAction("ShoppingList");
         }

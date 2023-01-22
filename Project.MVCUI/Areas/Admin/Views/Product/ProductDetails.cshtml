@@ -11,17 +11,21 @@
     <h4>ProductVM</h4>
     <hr />
 
-    <h4><b>Name:</b> @Model.Product.ProductName</h4>  
-    <h4><b>Status:</b> @Model.Product.Status</h4>
-
+    <h4><b>Name:</b> @Model.Product.ProductName</h4>
+    <h4><b>Price:</b> @Model.Product.UnitPrice</h4>
     <br />
-    <button class="btn btn-primary">Sepete Ekle</button>
+
+  
+        
+       @Html.ActionLink("Sepete Ekle", "../../Shopping/AddToCart", new {  id = Model.Product.ID })
+  
 
 
-    <dl class="dl-horizontal">
-    </dl>
+
+        <dl class="dl-horizontal">
+        </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "ProductList", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Güncelle", "ProductList", new { /* id = Model.PrimaryKey */ }) |
     @Html.ActionLink("Back to List", "ProductList")
 </p>

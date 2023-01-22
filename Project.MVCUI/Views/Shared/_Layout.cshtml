@@ -20,10 +20,22 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Category", "Category/CategoryList", "Admin")</li>
-                    <li>@Html.ActionLink("Products", "Product/ProductList", "Admin")</li>
-                    <li>@Html.ActionLink("Basket", "ShoppingList", "Shopping")</li>
+                    <li>
+                        <a href="@Url.Action("Category/CategoryList", null, new { area = string.Empty, controller = "Admin" }, Request.Url.Scheme)">
+                            Category
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Product/ProductList", null, new { area = string.Empty, controller = "Admin" }, Request.Url.Scheme)">
+                            Products
+                        </a>
+                    </li>
+                    <li>
+
+                        <a href="@Url.Action("ShoppingList", null, new { area = string.Empty, controller = "Shopping" }, Request.Url.Scheme)">
+                            Basket
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>

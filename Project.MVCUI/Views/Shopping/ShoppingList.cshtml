@@ -1,4 +1,4 @@
-﻿@model PaginationVM
+﻿@model ShoppingVM
 
 @{
     ViewBag.Title = "ShoppingList";
@@ -7,22 +7,38 @@
 
 <h2>ShoppingList</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
-    <tr>
-        <th></th>
-    </tr>
 
-@foreach (Category item in Model.Categories) {
-    <tr>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
-}
+    @if (Model.Cards.Count == 0)
+    {
+        <p>Sepetinizde ürün bulunmamaktadır.</p>
+    }
+    else
+    {
+        decimal totalPrice = 0m;
+
+
+
+        foreach (CartItem item in Model.Cards)
+        {
+
+            totalPrice += item.Price;
+            <tr>
+                <td>
+                    <h3>Name: @item.Name</h3>
+                    <h3>Price: @item.Price</h3>
+                    @Html.ActionLink("Sepetten Çıkar", "DeleteFromCart", new { id = item.ID })
+
+                </td>
+            </tr>
+        }
+        <tr>
+            <h2>Total Price:    @totalPrice</h2>
+        </tr>
+
+        //@Html.ActionLink("Alış Veriş Tamamla", "CompletedShopping", new { ids = item.ID })
+
+    }
+
 
 </table>
