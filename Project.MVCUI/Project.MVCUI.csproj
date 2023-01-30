@@ -2042,6 +2042,8 @@
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Contact\AddTechnicalIssue.cshtml" />
     <Content Include="Views\Shopping\ShoppingList.cshtml" />
+    <Content Include="Views\Shopping\ConfirmOrder.cshtml" />
+    <Content Include="Views\Shopping\ResultOrder.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "ResultOrder";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ResultOrder</h2>
+
+@TempData["sorun"]
+@TempData["baglantiRed"]
+
+
+@if (TempData["odemesonuc"] != null)
+{
+    <p>@TempData["odemesonuc"]</p>
+}
+
+@if (TempData["baglantiRed"] != null)
+{
+    <p>@TempData["baglantiRed"]</p>
+}
+
+@if (TempData["sorun"] != null)
+{
+    <p>@TempData["sorun"]</p>
+}
+

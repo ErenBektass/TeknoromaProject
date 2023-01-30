@@ -1,7 +1,9 @@
 ﻿using PagedList;
 using Project.BLL.DesignPatterns.GenericRepository.ConcRep;
 using Project.COMMON.Tools;
+using Project.ENTITIES.Enums;
 using Project.ENTITIES.Models;
+using Project.MVCUI.AuthenticationClasses;
 using Project.MVCUI.Models.ShoppingTools;
 using Project.MVCUI.VMClasses;
 using System;
@@ -29,8 +31,17 @@ namespace Project.MVCUI.Controllers
             _pRep = new ProductRepository();
             _cRep = new CategoryRepository();
         }
+
+        
         public ActionResult ShoppingList()
         {
+
+            if (Session["member"] == null)
+            {
+                return RedirectToAction("../Login/Login");
+            }
+
+
             Cart c = Session["scart"] == null ? new Cart() : Session["scart"] as Cart;
             List<CartItem> cards = c.Sepetim;
             ShoppingVM spvm = new ShoppingVM
@@ -133,7 +144,7 @@ namespace Project.MVCUI.Controllers
                 {
 
                     TempData["baglantiRed"]= "Banka baglantiyi reddetti";
-                    return RedirectToAction("ShoppingList");
+                    return RedirectToAction("ResultOrder");
                 }
                 if (sonuc.IsSuccessStatusCode) result = true;
                 else result = false;
@@ -151,13 +162,16 @@ namespace Project.MVCUI.Controllers
                         ovm.Order.AppUserID = null;
                         ovm.Order.UserName = TempData["anonim"].ToString();
                     }
-                    _oRep.Add(ovm.Order); //OrderRepository bu noktada Order'i eklerken onun ID'sini olusturuyor
+                    ovm.Order.OrderDate = DateTime.Now;
+                    ovm.Order.CreatedDate = DateTime.Now;
+                   _oRep.Add(ovm.Order); //OrderRepository bu noktada Order'i eklerken onun ID'sini olusturuyor
 
                     foreach (CartItem item in sepet.Sepetim)
                     {
                         OrderDetail od = new OrderDetail();
                         od.OrderID = ovm.Order.ID;
                         od.ProductID = item.ID;
+                        od.UnitPrice = item.Price;
                         od.TotalPrice = item.SubTotal;
                         od.Quantity = item.Amount;
                         _odRep.Add(od);
@@ -167,28 +181,18 @@ namespace Project.MVCUI.Controllers
                         stokDus.UnitsInStock -= item.Amount;
                         _pRep.Update(stokDus);
                     }
-                    TempData["odeme"]= "Siparişiniz  bize ulasmıstır...Tesekkür ederiz";
+                    TempData["odemesonuc"]= "Siparişiniz  bize ulasmıstır...Tesekkür ederiz";
                     MailService.Send(ovm.Order.Email,body: $"Siparişiniz basarıyla alındı {ovm.Order.TotalPrice}");
                     Session.Remove("scart");
-                    return RedirectToAction("ShoppingList");
+                    return RedirectToAction("ResultOrder");
 
                 }
                 else
                 {
                     Task<string> s = sonuc.Content.ReadAsStringAsync();
                     TempData["sorun"] = s.Result;
-                    return RedirectToAction("ShoppingList");
+                    return RedirectToAction("ResultOrder");
                 }
-                
-                    
-
-                
-                
-                
-
-
-
-
 
 
             }
@@ -199,7 +203,10 @@ namespace Project.MVCUI.Controllers
         }
 
 
-
+        public ActionResult ResultOrder()
+        {
+            return View();
+        }
 
 
 

@@ -35,46 +35,46 @@ namespace Project.MVCUI.Controllers
                 return View();
             }
 
-            string decrypted=Crypt.Decrypt(user.Password);
+            string decrypted=Crypt.Encrypt(appUser.Password);
             
-            if (appUser.Password==decrypted&&user.Role==ENTITIES.Enums.UserRole.Admin)
+            if (user.Password==decrypted&&user.Role==ENTITIES.Enums.UserRole.Admin)
             {
                 Session["admin"] = user;
                 return RedirectToAction("AppUserList", "AppUser", new { Area = "Administration" });
             }
-            else if(appUser.Password==decrypted&&user.Role==ENTITIES.Enums.UserRole.BranchManager)
+            else if(user.Password==decrypted&&user.Role==ENTITIES.Enums.UserRole.BranchManager)
             {
                 Session["manager"]=user;
                 return RedirectToAction("AppUserList", "AppUser", new { Area = "Administration" });
             }
-            else if (appUser.Password == decrypted && user.Role ==ENTITIES.Enums.UserRole.SalesRepresentative)
+            else if (user.Password == decrypted && user.Role ==ENTITIES.Enums.UserRole.SalesRepresentative)
             {
                 Session["sales"] = user;
                 return RedirectToAction("ProductList", "Product", new { Area = "Administration" });
             }
-            else if (appUser.Password == decrypted && user.Role ==ENTITIES.Enums.UserRole.AccountingRepresentative)
+            else if (user.Password == decrypted && user.Role ==ENTITIES.Enums.UserRole.AccountingRepresentative)
             {
                 Session["account"] = user;
                 return RedirectToAction("ExpenseList", "Expense", new { Area = "Administration" });
             }
-            else if (appUser.Password == decrypted && user.Role ==ENTITIES.Enums.UserRole.WarehouseRepresentative)
+            else if (user.Password == decrypted && user.Role ==ENTITIES.Enums.UserRole.WarehouseRepresentative)
             {
                 Session["ware"] = user;
                 return RedirectToAction("ProductList", "Product", new { Area = "Administration" });
 
             }
-            else if (appUser.Password == decrypted && user.Role ==ENTITIES.Enums.UserRole.TechnicalServiceRepresentative)
+            else if (user.Password == decrypted && user.Role ==ENTITIES.Enums.UserRole.TechnicalServiceRepresentative)
             {
                 Session["technical"] = user;
                 return RedirectToAction("IssueList", "Issue", new { Area = "Administration" });
             }
-            else if (appUser.Password == decrypted && user.Role ==ENTITIES.Enums.UserRole.MobileSalesRepresentative)
+            else if (user.Password == decrypted && user.Role ==ENTITIES.Enums.UserRole.MobileSalesRepresentative)
             {
                 Session["mobileSales"] = user;
                 return RedirectToAction("ProductList","Product", new { Area = "Administration" });
 
             }
-            else if (appUser.Password == decrypted && user.Role ==ENTITIES.Enums.UserRole.Member)
+            else if (user.Password == decrypted && user.Role ==ENTITIES.Enums.UserRole.Member)
             {
                 if (!user.Active)
                 {
