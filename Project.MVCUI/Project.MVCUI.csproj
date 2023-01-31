@@ -2040,7 +2040,6 @@
     <Content Include="Views\Register\RegisterOK.cshtml" />
     <Content Include="Views\Register\RegisterNow.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
-    <Content Include="Views\Contact\AddTechnicalIssue.cshtml" />
     <Content Include="Views\Shopping\ShoppingList.cshtml" />
     <Content Include="Views\Shopping\ConfirmOrder.cshtml" />
     <Content Include="Views\Shopping\ResultOrder.cshtml" />
@@ -2049,7 +2048,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
-    <Folder Include="Views\Contanct\" />
+    <Folder Include="Pictures\" />
     <Folder Include="Views\Product\" />
   </ItemGroup>
   <ItemGroup>

@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>ShoppingList</h2>
+<h2>Sepet Sayfası</h2>
 
 <table class="table">
 
@@ -24,18 +24,23 @@
             totalPrice += item.Price;
             <tr>
                 <td>
-                    <h3>Name: @item.Name</h3>
-                    <h3>Price: @item.Price</h3>
+                    @if (item.ImagePath != null)
+                    {
+                        <h4><b>Fotoğraf:</b><img src=" @item.ImagePath" width="128" height="128"></h4>
+
+                    }
+                    <h3>Ürün Adı: @item.Name</h3>
+                    <h3>Ürün Fiyatı: @item.Price</h3>
                     @Html.ActionLink("Sepetten Çıkar", "DeleteFromCart", new { id = item.ID })
 
                 </td>
             </tr>
         }
         <tr>
-            <h2>Total Price:    @totalPrice</h2>
+            <h2>Toplam Fiyat:    @totalPrice</h2>
         </tr>
 
-        @Html.ActionLink("Alışveriş Tamamla", "ConfirmOrder" )
+        @Html.ActionLink("Alışverişi Tamamla", "ConfirmOrder" )
 
     }
 

@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>UpdateProduct</h2>
+<h2>Ürün Bilgisi Güncelleme</h2>
 
 @using (Html.BeginForm("UpdateProduct", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
@@ -14,7 +14,7 @@
         <div class="col-sm-12">
             <section class="panel">
                 <header class="panel-heading">
-                    Ürün Ekleme Sayfası
+                    
                 </header>
 
                 <div class="panel-body">
@@ -48,6 +48,17 @@
 
                     <br /> <br />
 
+
+                    <div class="form-group">
+                        <label class="col-sm-2">Resim seciniz</label>
+                        <div class="col-sm-10">
+                            <input type="file" name="image" class="form-control genislik" />
+                            <br />
+                            @Html.TextBoxFor(x => x.Product.ImagePath, null, new { @class = "form-control genislik", placeholder = "Resim ismi giriniz" })
+                        </div>
+                    </div>
+
+                    <br /> <br />
 
                     <div class="form-group">
                         <label class="col-sm-2">Kategori</label>
@@ -88,5 +99,5 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "ProductList")
+    @Html.ActionLink("Ürün Listesi", "ProductList")
 </div>

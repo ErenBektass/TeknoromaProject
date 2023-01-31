@@ -14,7 +14,7 @@ namespace Project.MVCUI.AuthenticationClasses
             {
                 return true;
             }
-            httpContext.Response.Redirect("/Home/Login");
+            httpContext.Response.Redirect("/Login/Login");
             return false;
         }
     }

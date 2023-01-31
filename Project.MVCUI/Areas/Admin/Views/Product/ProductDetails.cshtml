@@ -5,27 +5,33 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>ProductDetails</h2>
+<h2>Ürün Detayları</h2>
 
 <div>
-    <h4>ProductVM</h4>
     <hr />
 
-    <h4><b>Name:</b> @Model.Product.ProductName</h4>
-    <h4><b>Price:</b> @Model.Product.UnitPrice</h4>
+    <h4><b>Adı:</b> @Model.Product.ProductName</h4>
+    <h4><b>Fiyatı:</b> @Model.Product.UnitPrice</h4>
+    <h4><b>Stok:</b> @Model.Product.UnitsInStock</h4>
+    @if (Model.Product.ImagePath != null)
+    {
+        <h4><b>Fotoğraf:</b><img src=" @Model.Product.ImagePath"  width="256" height="256"></h4>
+
+    }
+
     <br />
 
-  
-        
-       @Html.ActionLink("Sepete Ekle", "../../Shopping/AddToCart", new {  id = Model.Product.ID })
-  
+
+
+    @Html.ActionLink("Sepete Ekle", "../../Shopping/AddToCart", new { id = Model.Product.ID })
 
 
 
-        <dl class="dl-horizontal">
-        </dl>
+
+    <dl class="dl-horizontal">
+    </dl>
 </div>
 <p>
-    @Html.ActionLink("Güncelle", "ProductList", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "ProductList")
+    @Html.ActionLink("Güncelle", "UpdateProduct", new {  id = Model.Product.ID  }) |
+    @Html.ActionLink("Ürün Listesi", "ProductList")
 </p>

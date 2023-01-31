@@ -1,5 +1,6 @@
 ﻿using Project.BLL.DesignPatterns.GenericRepository.ConcRep;
 using Project.ENTITIES.Models;
+using Project.MVCUI.AuthenticationClasses;
 using Project.MVCUI.VMClasses;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ using System.Web.Mvc;
 
 namespace Project.MVCUI.Areas.Admin.Controllers
 {
+
     public class CategoryController : Controller
     {
         CategoryRepository _cRep;
@@ -35,6 +37,7 @@ namespace Project.MVCUI.Areas.Admin.Controllers
             CategoryVM categoryVM = new CategoryVM { Category = _cRep.Where(x => x.ID == id).FirstOrDefault() };
             return View(categoryVM);
         }
+
         public ActionResult AddCategory()
         {
             return View();

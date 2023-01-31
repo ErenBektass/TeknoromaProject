@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>AddProduct</h2>
+<h2>Ürün Ekleme</h2>
 
 @using (Html.BeginForm("AddProduct", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
@@ -13,7 +13,7 @@
         <div class="col-sm-12">
             <section class="panel">
                 <header class="panel-heading">
-                    Ürün Ekleme Sayfası
+                 
                 </header>
 
                 <div class="panel-body">
@@ -96,5 +96,5 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "ProductList")
+    @Html.ActionLink("Ürün Listesi", "ProductList")
 </div>

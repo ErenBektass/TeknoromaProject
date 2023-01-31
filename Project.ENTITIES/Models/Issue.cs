@@ -19,6 +19,9 @@ namespace Project.ENTITIES.Models
         public DateTime OpenDate { get; set; }
         public string Email { get; set; }
         public int? AppUserID { get; set; }
+        public string Subject { get; set; }
+        public string Description { get; set; }
+        public string Result { get; set; }
 
         //Relational Properties
         public virtual AppUser AppUser { get; set; }

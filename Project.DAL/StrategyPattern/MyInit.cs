@@ -145,7 +145,7 @@ namespace Project.DAL.StrategyPattern
             {
                 ID = msp.ID,
                 FirstName = "Fahri",
-                LastName = "cepçi",
+                LastName = "Cepçi",
                 TCNO = "8888888888",
                 PhoneNumber = "05875256568",
                 Email = "fahricepçi@hotmail.com",

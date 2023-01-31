@@ -49,7 +49,10 @@ namespace Project.MVCUI.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult AddProduct(Product product,HttpPostedFileBase image,string filename)
         {
-            product.ImagePath = ImageUploader.UploadImage("/Pictures", image, filename);
+            if (image != null && filename != null)
+            {
+                product.ImagePath = ImageUploader.UploadImage("/Pictures/", image, filename);
+            }
             _pRep.Add(product);
             return RedirectToAction("ProductList");
         }
@@ -63,8 +66,12 @@ namespace Project.MVCUI.Areas.Admin.Controllers
             return View(pvm);
         }
         [HttpPost]
-        public ActionResult UpdateProduct(Product product)
+        public ActionResult UpdateProduct(Product product, HttpPostedFileBase image)
         {
+            if (image != null)
+            {
+                product.ImagePath = ImageUploader.UploadImage("/Pictures/", image, product.ImagePath);
+            }
             _pRep.Update(product);
             return RedirectToAction("ProductList");
         }
