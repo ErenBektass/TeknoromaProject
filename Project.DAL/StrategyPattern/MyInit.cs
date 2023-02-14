@@ -259,8 +259,8 @@ namespace Project.DAL.StrategyPattern
                         ProductName = new Commerce("tr").ProductName(),
                         UnitPrice = Convert.ToDecimal(new Commerce("tr").Price()),
                         UnitsInStock = 100,
-                        ImagePath = new Images().LoremPixelUrl(),
-
+                        ImagePath =null,
+                        
                     };
                     c.Products.Add(p);
 

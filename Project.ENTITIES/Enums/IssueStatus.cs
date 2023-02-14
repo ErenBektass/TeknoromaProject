@@ -8,6 +8,6 @@ namespace Project.ENTITIES.Enums
 {
     public enum IssueStatus
     {
-        Open=1,Closed=3
+        Open=1,InProgress=2,Closed=3
     }
 }

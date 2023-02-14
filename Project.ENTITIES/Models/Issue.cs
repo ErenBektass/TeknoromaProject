@@ -21,7 +21,7 @@ namespace Project.ENTITIES.Models
         public int? AppUserID { get; set; }
         public string Subject { get; set; }
         public string Description { get; set; }
-        public string Result { get; set; }
+        public string Answer { get; set; }
 
         //Relational Properties
         public virtual AppUser AppUser { get; set; }

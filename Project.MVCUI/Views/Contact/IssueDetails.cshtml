@@ -1,0 +1,23 @@
+﻿@model IssueVM
+
+@{
+    ViewBag.Title = "IssueDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Sorun Detayları</h2>
+
+<div>
+    <hr />
+
+    <h4><b>Konu:</b>@Model.Issue.Subject</h4>
+    <h4><b>Açıklama:</b>@Model.Issue.Description</h4>
+    <h4><b>Email:</b>@Model.Issue.Email</h4>
+
+    <dl class="dl-horizontal">
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Güncelle", "UpdateIssue", new {  id = Model.Issue.ID }) |
+    @Html.ActionLink("Sorun Listesi", "IssueList")
+</p>

@@ -1,0 +1,34 @@
+﻿@model IssueVM
+
+@{
+    ViewBag.Title = "IssueList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Sorun Listesi</h2>
+
+<p>
+    @Html.ActionLink("Şikayet Oluştur", "AddIssue")
+</p>
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Subject</th>
+        <th>Status</th>
+        <th>İşlemler</th>
+    </tr>
+
+@foreach (Issue item in Model.Issues) {
+    <tr>
+        <td>@item.ID</td>
+        <td>@item.Subject</td>
+        <td>@item.IssueStatus</td>
+        <td>
+            @Html.ActionLink("Güncelle", "UpdateIssue", new {  id=item.ID  }) |
+            @Html.ActionLink("Detay", "IssueDetails", new {  id=item.ID }) |
+            @Html.ActionLink("Sil", "DeleteIssue", new {  id=item.ID  })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,51 @@
+1 => Proje N-Tier mimari paternine göre yazýlacaktýr.
+
+2 => Projede acýlacak katmanlar
+ENTITIES,
+MAP,
+DAL,
+BLL,
+COMMON (Ortak kullanýlacak sýnýflarýn tutulacagý katman olacaktýr),
+UI(MVC olarak düsünülmüþtür)
+
+3 => Projenin çalýþtýrýlabilmesi için "MVCUI" içersindeki "Web.config" dosyasýna gidilerek "ConnectionString" yapýsý veritababýnýza ve kullanýcý cihazýna göre düzenlenmelidir.
+
+4 => Projede degiþken isimleri degiþkenler local variable oldugu sürece camelCase, field oldugu sürece basýnda _ sembolü olmak üzere camelCase; Property, metot ve class isimleri PascalCase standartlarýnda yazýlacaktýr ve projede Türkçe karakter kullanýlmayacaktýr. CLass isimleri kesinlikle cogul olmayacaktýr.
+
+5 => Katman isimleri Project ile baslayarak . sembolünden sonra katmansal takýlarla bitecektir(Project.ENTITIES vs...)
+
+6 => Tasarým patternlerinden Generic Repository, Singleton Pattern ve Strategy Pattern kesinlikle kullanýlacaktýr... Mevcut algoritmada bu tasarým paternlerinin dýsýnda bir baska Tasarým Paterni öngörülmemektedir...Ancak projenin esnekligi buna elveriþli olduðu takdirde, projenin mimari paterniyle bir çakýþma olmadýðý takdirde (bu durum özel olarak istenecek olan bir Arge süreci icerisinde hemen belirlenmek zorundadýr) gerekli görülürse rahatca eklenebilecektir...
+
+7 => Projede veri eklemesi yapýlabilmesi için "Bogus" kütüphanesi ile oluþturulabilen fake verilerin eklenebilmesi için tanýmlanmýþ kullancýlardan biri ile giriþ yapýlmalýdýr.
+
+8 => Mail service ile tarafýnýza mail gönderecek adres => TeknoromaProjects@gmail.com //// Þifre => Yzl3157H
+
+9 => Teknoroma Üye Bilgileri
+
+* Admin
+Kullanýcý Adý:Eren
+þifre:123
+
+* Kullanýcý (User)
+Kullanýcý Adý:User
+þifre:2322
+
+* Þube Müdürü(Manager)
+Kullanýcý Adý:Manager
+þifre:222
+
+* Satýþ Sorumlusu (Sales)
+Kullanýcý Adý:Sales
+Þifre:333
+
+* Depo Sorumlusu(Ware)
+Kullanýcý Adý:Ware
+þifre:5555
+
+* Teknis Servis(Technical)
+Kullanýcý Adý:Technical
+þifre:6666
+
+*Muhasabe Sorumlusu (Accounting)
+Kullanýcý Adý:Accounting
+Þifre:88888
