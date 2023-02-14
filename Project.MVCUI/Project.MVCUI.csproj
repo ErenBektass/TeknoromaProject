@@ -157,7 +157,6 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
-    <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\ShoppingController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -167,7 +166,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tools\ImageUploader.cs" />
     <Compile Include="VMClasses\AppUserVM.cs" />
-    <Compile Include="VMClasses\ReportVM.cs" />
     <Compile Include="VMClasses\ShoppingVM.cs" />
     <Compile Include="VMClasses\CartPageVM.cs" />
     <Compile Include="VMClasses\CategoryVM.cs" />
