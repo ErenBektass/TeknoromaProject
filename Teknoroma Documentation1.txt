@@ -20,7 +20,7 @@ UI(MVC olarak düsünülmüþtür)
 
 8 => Mail service ile tarafýnýza mail gönderecek adres => TeknoromaProjects@gmail.com //// Þifre => Yzl3157H
 
-9 => Sanal Post Entegrasyonu için  "https://github.com/ErenBektass?tab=repositories" Adresine girip WebAPIBank_0" Adli projeyi indirmeniz gerekmektedir ayrýca  projeyi açýp Controllers klasörüne týklayip PaymentControlleri  acip calistirmaniz gerekmektedir.
+9 => Sanal Post Entegrasyonu(Banka) için  "https://github.com/ErenBektass?tab=repositories" Adresine girip WebAPIBank_0" Adli projeyi indirmeniz gerekmektedir ayrýca  projeyi açýp Controllers klasörüne týklayip PaymentControlleri  açýp çaýstýrmanýz gerekmektedir.
 
 Kart bilgileri
 
