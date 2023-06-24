@@ -36,10 +36,10 @@ namespace Project.MVCUI.Controllers
         public ActionResult ShoppingList()
         {
 
-            if (Session["member"] == null)
-            {
-                return RedirectToAction("../Login/Login");
-            }
+            //if (Session["member"] == null)
+            //{
+            //    return RedirectToAction("../Login/Login");
+            //}
 
 
             Cart c = Session["scart"] == null ? new Cart() : Session["scart"] as Cart;

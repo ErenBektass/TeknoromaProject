@@ -20,15 +20,15 @@ UI(MVC olarak düsünülmüþtür)
 
 8 => Mail service ile tarafýnýza mail gönderecek adres => TeknoromaProjects@gmail.com //// Þifre => Yzl3157H
 
-9 => Sanal Pos Entegrasyonu(Banka) için  "https://github.com/ErenBektass?tab=repositories" Adresine girip WebAPIBank_0" Adli projeyi indirmeniz gerekmektedir ayrýca  projeyi açýp Controllers klasörüne týklayip PaymentControlleri  açýp çalýþtýrmanýz gerekmektedir.
+9 => Sanal Pos Entegrasyonu(Banka) için  "https://github.com/ErenBektass?tab=repositories" Adresine girip WebAPIBank" Adli projeyi indirmeniz gerekmektedir ayrýca  projeyi açýp Controllers klasörüne týklayip PaymentControlleri  açýp çalýþtýrmanýz gerekmektedir.
 
 Kart bilgileri
 
 Eren Bektas
-1111 1111 1111 1995
-2025
-10
-999
+2222 1111 1111 1111
+2024
+12
+1995
 
 
 10 => Teknoroma Üye Bilgileri
